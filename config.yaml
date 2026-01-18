@@ -1,0 +1,20 @@
+# Webhook Handler Configuration
+
+# Server settings
+port: 9080
+host: "127.0.0.1"
+
+# Default response for all requests
+response:
+  status: 200
+  headers:
+    Content-Type: "application/json"
+  body: '{"status": "ok"}'
+
+# Path-specific responses (optional)
+routes:
+  - path: "/health"
+    method: "GET"
+    response:
+      status: 200
+      body: '{"healthy": true}'
